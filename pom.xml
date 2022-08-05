@@ -60,6 +60,13 @@
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+
+		<dependency>
+			<groupId>com.pineapple</groupId>
+			<artifactId>pineapple-commons</artifactId>
+			<version>0.4</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -78,5 +85,12 @@
 			</plugin>
 		</plugins>
 	</build>
+
+	<repositories>
+		<repository>
+			<id>nexus</id>
+			<url>http://192.168.1.9:9000/repository/maven-releases/</url>
+		</repository>
+	</repositories>
 
 </project>
