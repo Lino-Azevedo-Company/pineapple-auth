@@ -1,0 +1,19 @@
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          sdm:
+            clientId: ${KEYCLOAK_CLIENT_ID}
+            clientSecret: ${KEYCLOAK_CLIENT_SECRET}
+            authorizationGrantType: authorization_code
+            redirectUri: '{baseUrl}/login/oauth2/code/{registrationId}'
+        provider:
+          sdm:
+            authorizationUri: ${KEYCLOAK_AUTHORIZATION_URI}
+            tokenUri: ${KEYCLOAK_TOKEN_URI}
+            userInfoUri: ${KEYCLOAK_USER_INFO_URI}
+            jwkSetUri: ${KEYCLOAK_JWK_SET_URI}
+            userNameAttribute: user_name
+
+oauthRedirectUri: ${OAUTH_REDIRECT_URI}

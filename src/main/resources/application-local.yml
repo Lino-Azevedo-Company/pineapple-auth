@@ -1,0 +1,22 @@
+server:
+  port: 8082
+
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          sdm:
+            clientId: sdm-app
+            clientSecret: ly7U4iizAT02y4UJBhFUZ5K4itJBTgJz
+            authorizationGrantType: authorization_code
+            redirectUri: '{baseUrl}/login/oauth2/code/{registrationId}'
+        provider:
+          sdm:
+            authorizationUri: http://192.168.1.9:8080/realms/sdm/protocol/openid-connect/auth
+            tokenUri: http://192.168.1.9:8080/realms/sdm/protocol/openid-connect/token
+            userInfoUri: http://192.168.1.9:8080/realms/sdm/protocol/openid-connect/userinfo
+            jwkSetUri: http://192.168.1.9:8080/realms/sdm/protocol/openid-connect/certs
+            userNameAttribute: user_name
+
+oauthRedirectUri: http://localhost:8080/home
